@@ -9,7 +9,6 @@ COPY ./srcs/index.html ./tmp/index.html
 COPY ./srcs/index.php ./tmp/index.php
 COPY ./srcs/config_nginx ./tmp/config_nginx
 COPY ./srcs/config.inc.php ./tmp/config.inc.php
-# COPY ./srcs/wordpress.sql ./tmp/wordpress.sql
 COPY ./srcs/wp-config.php ./tmp/
 COPY ./srcs/wordpress.zip ./tmp/
 

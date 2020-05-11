@@ -30,11 +30,9 @@ echo "CREATE DATABASE wordpress;" | mysql -u root
 echo "GRANT ALL ON wordpress.* TO 'root'@'localhost';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 echo "update mysql.user set plugin = 'mysql_native_password' where user='root';" | mysql -u root
-# mysql wordpress -u root < /tmp/wordpress.sql
 
 # Wordpress
 unzip ./tmp/wordpress.zip -d /var/www/localhost/
-chown -R www-data:www-data /var/www/localhost
 cp ./tmp/wp-config.php /var/www/localhost/wordpress/
 
 service php7.3-fpm start
@@ -42,6 +40,5 @@ service nginx start
 service nginx configtests
 service nginx status
 
+# Displays the logs and then monitors them
 tail -f /var/log/nginx/access.log /var/log/nginx/error.log 
-
-#docker exec -ti test1 sh
